@@ -15,9 +15,44 @@
  * API nada mais é do que uma ponte que eu posso utilizar para obter os dados de um serviço.
  */
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:async';
+import 'dart:convert';
 
-void main(){
+const request = "https://api.hgbrasil.com/finance?key=c17f3103";
+
+void main() async{
+
+  //print(await getData());
+
   runApp(MaterialApp(
-    home: Container(),
+    home: Home(),
   ));
+}
+
+Future<Map> getData() async{
+  http.Response response = await http.get(request);
+  /*JSON transforma em mapa*/
+  return json.decode(response.body);
+}
+
+// stful
+class Home extends StatefulWidget {
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black,
+      appBar: AppBar(
+        title: Text("Conversor"),
+        backgroundColor: Colors.amber,
+        centerTitle: true,
+      ),
+      body: ,
+    );
+  }
 }
