@@ -124,6 +124,12 @@ class _HomeState extends State<Home> {
                         buildTextFiled("Dólares", "US\$", dolarController, _dolarChanged),
                         Divider(),
                         buildTextFiled("Euros", "€", euroController, _euroChanged),
+                        Divider(),
+                        Text("Preço de Compra", style: TextStyle(color: Colors.white), textAlign: TextAlign.center,),
+                        Divider(),
+                        Text("Dolar: $dolar", style: TextStyle(color: Colors.white), textAlign: TextAlign.center),
+                        Divider(),
+                        Text("Euro: $euro", style: TextStyle(color: Colors.white),textAlign: TextAlign.center)
                       ],
                     ),
                   );
